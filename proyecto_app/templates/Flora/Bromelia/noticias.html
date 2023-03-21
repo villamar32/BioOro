@@ -1,0 +1,131 @@
+{% extends "Flora/Bromelia/dashboard.html" %}
+
+{% load static %}
+
+
+
+
+{% block content %}
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
+<link rel="stylesheet" href="{% static 'css/themify.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Noticias/Article-List.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Noticias/ficha_tecnica.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Noticias/Carousel-Hero.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Noticias/Data-Table-1.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Noticias/Data-Table.css' %}">
+
+          
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Galeria/best-carousel-slide.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Galeria/Carousel-Hero.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Galeria/galeria.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Galeria/Highlight-Blue.css' %}">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Galeria/Lightbox-Gallery.css' %}">
+
+
+<div style="background-color: black;">
+    <div id="carousel-example-card" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carousel-example-card" data-slide-to="0"
+                class="active"></li>
+          
+        </ol>
+        <div class="carousel-inner rounded-0"  role="listbox">
+            <div class="carousel-item active">
+                <img src="{% static 'assets/img/Flora/Bromelias/intro.jpg' %}"
+                    class="d-block w-50  " style=" display: block; margin: auto; " alt="First slide">
+            </div>
+           
+        </div>
+        
+      </div>
+</div>
+<div>
+
+  <div class="card">
+    <div class="article-list">
+      <div class="container">
+          <div class="intro">
+              <h2 class="text-center">Noticias</h2>
+              <p class="text-center" style="font-weight: bold;text-align: center;color: var(--bs-gray-800);">Nuevas especies de Bromelias.</p>
+           
+          </div>
+      </div>
+  </div>
+
+      <section class="photo-gallery">
+
+          <div class="container">
+              <div class="intro">
+              
+              </div>
+              <div class="row photos" data-bss-baguettebox="">
+                {%  for i in noticias  %}
+                <div class="col-md-6 item">
+                  <a href="{{i.imagenflora.url}}">
+                      <img class="img-fluid ratio ratio-1x1" src="{{i.imagenflora.url}}"></a>
+                    <figure>
+                        <blockquote class="blockquote">
+                            <p class="mb-0" style="text-align: center;font-weight: bold;color: rgb(19,20,20); padding-top: 10px;">{{i.nom_flora}}</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer" style="text-align: center;color: rgb(21,23,25); font-size:  18px;">Año: {{i.anio_descubrimiento}}</figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-6 item">
+                              <strong>{{i.etimologia_flora}}</strong>
+                              <br>
+                              {{i.diagnosis_flora}}
+                              <br>
+                              {{i.distribucion_composicion_flora}}
+               </div>
+               {% endfor %}
+              
+                
+              </div>
+          </div>
+          
+      
+      </section>
+     </div>
+ </section>
+
+
+
+
+
+  </div>
+
+    
+
+
+
+
+
+
+
+
+
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+
+
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/bs-init.js' %}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+
+
+<script src="{% static 'js/Lightbox-Gallery.js' %}"></script>
+
+<script src="{% static 'js/simple-datatables/simple-datatables.js' %}"></script>
+<script src="{% static 'js/vendors.js' %}"></script>
+
+{% endblock %}    

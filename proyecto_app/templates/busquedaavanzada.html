@@ -1,0 +1,633 @@
+
+{% load static %}
+    
+    <!DOCTYPE html>
+    <html lang="en" style="font-weight: bold;">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>  Búsqueda Avanzada</title>
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
+        <link rel="stylesheet" href="{% static 'css/themify.css' %}">
+        <link rel="stylesheet" href="{% static 'css/BusquedaGeneral_css/Article-List.css' %}">
+        <link rel="stylesheet" href="{% static 'css/BusquedaGeneral_css/busquedaavanzada.css' %}">
+        <link rel="stylesheet" href="{% static 'css/BusquedaGeneral_css/Carousel-Hero.css' %}">
+        <link rel="stylesheet" href="{% static 'css/BusquedaGeneral_css/Data-Table-1.css' %}">
+        <link rel="stylesheet" href="{% static 'css/BusquedaGeneral_css/Data-Table.css' %}">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/BusquedaGeneral_css/Newsletter-Subscription-Form.css' %}">
+        <link rel="stylesheet" href="{% static 'css/BusquedaGeneral_css/themify-icons/themify-icons.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+        <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+
+        <link rel="stylesheet" href="{% static 'assets/css/header.css' %}">
+
+      
+
+
+        <style type="text/css">
+            #desplegar{
+                display: none;
+            }
+
+            #desplegarflora{
+                display: none;
+            }
+
+
+        </style>
+
+        
+
+    </head>
+
+        <body>
+
+            <nav class="navbar navbar-light navbar-expand-md sticky-top bg-light">
+                <div class="container-fluid"><a class="navbar-brand" href="{% url 'inicio'%}"><img id="logo" src="{% static 'assets/img/logo/logo.png' %}">Bioro</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="navbar-nav" style="height: 2.625rem;">           
+                            <li class="nav-item" style="margin-right: 15px;"><a class="nav-link" href="{% url 'infoweb'%}">Acerca de Bioro</a></li>
+                            <li class="nav-item" style="margin-right: 15px;"><a class="nav-link" href="{% url 'sugerencias'%}">Sugerencias</a></li>
+                            <li class="nav-item" style="margin-right: 15px;"><a class="nav-link" href="{% url 'contacto'%}">Contacto</a></li>
+                            <li class="nav-item" style="margin-right: 15px;"><a class="nav-link active" href="{% url 'busquedaavanzada'%}">Búsqueda Avanzada</a></li>
+                            <li class="nav-item" style="margin-right: 15px;"><a class="nav-link" href="{% url 'galeriageneral'%}">Galería</a></li>  
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        <div>
+            <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
+                <div class="carousel-inner pulse animated">
+                    <div class="carousel-item active">
+                        <div class="bg-light border rounded border-light hero-nature carousel-hero jumbotron py-5 px-4" style="height: 267px;">
+                            <h1 class="hero-title">Búsqueda Avanzada<br></h1>
+                            <p class="hero-subtitle">Puede realizar la búsqueda de las distintas especies existentes en la Provincia de El ORO almacenadas en nuestra base de datos.<br></p>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="bg-light border rounded border-light hero-photography carousel-hero jumbotron py-5 px-4">
+                            <h1 class="hero-title">Búsqueda Avanzada<br></h1>
+                            <p class="hero-subtitle">Puede realizar la búsqueda de las distintas especies existentes en la Provincia de El ORO almacenadas en nuestra base de datos.<br></p>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="bg-light border rounded border-light hero-technology carousel-hero jumbotron py-5 px-4">
+                            <h1 class="hero-title">Búsqueda Avanzada<br></h1>
+                            <p class="hero-subtitle">Puede realizar la búsqueda de las distintas especies existentes en la Provincia de El ORO almacenadas en nuestra base de datos.<br></p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
+                </ol>
+            </div>
+        </div>
+        <div>
+            
+            <section id="seccion">
+                <div class="card-group" data-aos="fade" id="imagenes">
+                    <div class="card"><img class="card-img-top w-100 d-block" src="{% static 'assets/img/BusquedaGeneral/Iconos/hojas-de-una-planta.png' %}">
+                        <div class="card-body">
+                            <h4 class="text-center card-title">{{contar_flora}}</h4>
+                            <p class="text-center card-text">Flora</p>
+                        </div>
+                    </div>
+                    <div class="card"><img class="card-img-top w-100 d-block" src="{% static 'assets/img/BusquedaGeneral/Iconos/animal.png' %}">
+                        <div class="card-body">
+                            <h4 class="text-center card-title">{{contar_fauna}}</h4>
+                            <p class="text-center card-text">Fauna</p>
+                        </div>
+                    </div>
+                    <div class="card"><img class="card-img-top w-100 d-block" src="{% static 'assets/img/BusquedaGeneral/Iconos/marcador-de-posicion.png' %}">
+                        <div class="card-body">
+                            <h4 class="text-center card-title">{{contar_localidades}}</h4>
+                            <p class="text-center card-text">Localidades</p>
+                        </div>
+                    </div>
+                    <div class="card"><img class="card-img-top w-100 d-block" src="{% static 'assets/img/BusquedaGeneral/Iconos/grupo-de-personas.png' %}">
+                        <div class="card-body">
+                            <h4 class="text-center card-title">{{contar_autores}}</h4>
+                            <p class="text-center card-text">Autores</p>
+                        </div>
+                    </div>
+                    <div class="card"><img class="card-img-top w-100 d-block" src="{% static 'assets/img/BusquedaGeneral/Iconos/genoma.png' %}">
+                        <div class="card-body">
+                            <h4 class="text-center card-title">{{contar_biomas}}</h4>
+                            <p class="text-center card-text">Biomas</p>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </section>
+           
+            <section id="seccion-tabla">
+                <p data-aos="fade">Puede combinar la búsqueda para obtener resultados</p>
+                <h3> Fauna</h3>
+                <p data-aos="fade" style="font-weight: bold;">Taxonomía</p>
+                <div class="row"><div class="col-md-6">
+       <select class="form-select mb-3" id="orden" aria-label="Default select example">
+          
+        <option selected value="0">Seleccione orden.</option>
+          {% for orden in ordenes %}
+          <option>{{ orden.nom_orden }}</option>
+          
+          {% endfor %}
+
+        </select>
+        <select class="form-select mb-3" id="familia" aria-label="Default select example">
+            <option selected value="0">Seleccione una familia.</option>
+            {% for fam in familias %}
+            <option >{{ fam.nom_familia }}</option>
+            
+            {% endfor %}
+  
+        </select>
+        <select class="form-select mb-3" id="subfamilia" aria-label="Default select example">
+          <option selected value="0">Seleccione una subfamilia.</option>
+          {% for sub in subfamilias %}
+          <option>{{ sub.nom_subfamilia }}</option>
+          {% endfor %}
+        </select>
+        <input class="form-control mb-3" type="text" id="nombre_especie" placeholder="Nombre común" aria-label="default input example">
+        <input class="form-control mb-3" type="text" id="autor" placeholder="Autor de la descripción" aria-label="default input example">
+        
+    </div><div class="col-md-6">
+    
+    
+    <select class="form-select mb-3"id="clasificacion" aria-label="Default select example">
+        <option selected value="0" >Seleccione Clasificación.</option>
+           {% for key, i in tipo.items %}
+          <option>{{i}}</option>
+           {% endfor %}
+        </select>
+         
+    <input class="form-control mb-3" type="text" id="anio" placeholder="Año de descubrimiento" aria-label="default input example">
+    <input class="form-control mb-3" type="text" id="cientifico" placeholder="Nombre científico" aria-label="default input example">
+    <input class="form-control mb-3" type="text" id="clase" placeholder="Clase" aria-label="default input example">
+    </div></div>
+                <p data-aos="fade" style="font-weight: bold;">Localidad</p>
+                <div class="row"><div class="col-md-6">
+        <select class="form-select mb-3" id="ubicacion" aria-label="Default select example">
+          <option selected value="0">Seleccione Ubicación.</option>
+
+          {% for ub in ubicacion %}
+          <option>{{ ub.ubicacion  }}</option>
+          {% endfor %}
+        
+        </select>
+        <input class="form-control mb-3" type="text" id="altitudinal" placeholder="Rango altitudinal en metros" aria-label="default input example">
+        
+    </div><div class="col-md-6">
+        <select class="form-select mb-3" id="bioma" aria-label="Default select example">
+          <option selected value="0">Seleccione un Bioma.</option>
+          {% for bio in biomas %}
+          <option >{{ bio.nom_bioma  }}</option>
+          {% endfor %}
+        </select>
+        
+    
+    </div></div>
+                <p data-aos="fade" style="font-weight: bold;">Estado de conservación</p><div class="col-md-6">
+       <select class="form-select mb-3"  id="iucn" aria-label="Default select example">
+          <option selected value="0">Seleccione Lista Roja IUCN.</option>
+          {% for i in estado_conservacion %}
+          <option>{{i.categoria}}</option>
+          {% endfor %}
+        </select>
+
+    </div>
+                <div class="container">
+                    <div class="row"><div class="col-md-6">
+    
+    </div>
+</div>
+</div>
+    
+  <div class="">
+                    <div class="row">
+                        <div class="col-md-6 p-3 ps-0">
+                          
+                            <button type="button" onclick="filtrar_fauna();" class="btn btn-success"><img src="{% static 'assets/img/BusquedaGeneral/comunes/lupa-blanco.png' %}"  style="width: 1.5625rem; height: 1.5625rem;" > Buscar</button>
+                            <button type="button" onclick="mostrar_todo();" class="btn btn-dark">Listar todo.</button>
+                          
+                        
+                        </div>
+    <div class="col-md-6 p-3 ps-0">
+        <button type="button"  onclick="limpiar_tabla();" class="btn btn-primary">Limpiar</button>
+    </div></div>
+                </div>
+                <div id="desplegar">
+                    <h5>Infomación de búsqueda</h5> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <div class="py-3">
+                        <p>Escriba en el campo de entrada para buscar especies en la tabla:  
+                        <button type="button" onclick="quitar_todo();" class="btn"><img src="{% static 'assets/img/gallery/invisible.png' %}"  style="width: 1.5625rem; height: 1.5625rem;" > ocultar</button>
+                        </p>  
+                        <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
+                      </div>
+
+                      <div class="table-responsive">
+                        <table id="example" class="table table-striped table-bordered table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Nombre Científico</th>
+                                    <th>Nombre de especie</th>
+                                    <th>Clasificación</th>
+                                    <th>Rango Altitudinal</th>
+                                    <th>Ubicación</th>
+                                    <th>Bioma</th>
+                                    <th>Descripción</th>
+                                    <th>Nombre en Ingles</th>
+                                    <th>Estado de conservación</th>
+                                    <th>Nicho Trófico</th>
+                                    <th>Autor</th>
+                                    <th>Familia</th>
+                                    <th>Sub-familia</th>
+                                    <th>Orden</th>
+                                    <th>Clase</th>
+                                    <th>Año descubrimiento</th>
+                                    <th>Migración</th>
+                                </tr>
+                            </thead>
+                            <tbody id="myTable" style=" overflow:auto;">
+                                {% if data_fauna %}
+                                {% for result in data_fauna %}
+                                <tr>
+                                    <td>{{ result.nom_cientifico }}</td>
+                                    <td>{{ result.nom_especie }}</td>
+                                    <td>{{ result.tipo }}</td>
+                                    <td>{{ result.rango_altitudinal }}</td>
+                                    <td>{{ result.ubicacion }}</td>
+                                    <td>{{ result.nom_bioma }}</td>
+                                    <td>{{ result.descripcion }}</td>
+                                    <td>{{ result.nom_ingles }}</td>
+                                    <td>{{ result.categoria }}</td>
+                                    <td>{{ result.nom_nicho }}</td>
+                                    <td>{{ result.ape_persona }}</td>
+                                    <td>{{ result.nomb_familia }}</td>
+                                    <td>{{ result.nom_subfamilia }}</td>
+                                    <td>{{ result.nom_orden }}</td>
+                                    <td>{{ result.nom_clase }}</td>
+                                    <td>{{ result.anio_descubrimiento }}</td>
+                                    <td>{{ result.nom_migracion }}</td>
+                                </tr>
+                                {% endfor %}
+                                {% else %}
+                                <h1>No Hay registros</h1>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                        
+                    <script type="text/javascript">
+                    
+                    $(document).ready(function(){
+                      $("#myInput").on("keyup", function() {
+                        var value = $(this).val().toLowerCase();
+                        $("#myTable tr").filter(function() {
+                          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                      });
+                    });
+
+    
+                    function filtrar_fauna() {
+                                
+                        orden = document.getElementById("orden").value;
+                        familia = document.getElementById("familia").value;
+                        subfamilia = document.getElementById("subfamilia").value;
+                        nombre_especie = document.getElementById("nombre_especie").value;
+                        autor = document.getElementById("autor").value;
+                        clasificacion = document.getElementById("clasificacion").value;
+                        anio = document.getElementById("anio").value;
+                        cientifico = document.getElementById("cientifico").value;
+                        clase = document.getElementById("clase").value;
+                        ubicacion = document.getElementById("ubicacion").value;
+                        altitudinal = document.getElementById("altitudinal").value;
+                        bioma = document.getElementById("bioma").value;
+                        iucn = document.getElementById("iucn").value;
+                                    
+                        $("#myTable tr").filter(function() {
+                            $(this).toggle($(this).text().indexOf(orden) > -1) &&
+                            $(this).toggle($(this).text().indexOf(familia) > -1) &&
+                            $(this).toggle($(this).text().indexOf(subfamilia) > -1) &&
+                            $(this).toggle($(this).text().indexOf(nombre_especie) > -1) &&
+                            $(this).toggle($(this).text().indexOf(autor) > -1) &&
+                            $(this).toggle($(this).text().indexOf(clasificacion) > -1) &&
+                            $(this).toggle($(this).text().indexOf(anio) > -1) &&
+                            $(this).toggle($(this).text().indexOf(cientifico) > -1) &&
+                            $(this).toggle($(this).text().indexOf(ubicacion) > -1) &&
+                            $(this).toggle($(this).text().indexOf(altitudinal) > -1) &&
+                            $(this).toggle($(this).text().indexOf(bioma) > -1) &&
+                            $(this).toggle($(this).text().indexOf(iucn) > -1)
+                            });
+                       
+                            document.getElementById('desplegar').style.display = 'block';         
+                    
+                    
+                    }
+
+                    function limpiar_tabla(){
+                       
+                        /* Muestra elementos de la tabla*/
+                        $("#myTable tr").show();
+                        /*Limpia elementos text y combobox*/
+                        orden = document.getElementById("orden").value = "0";
+                        familia = document.getElementById("familia").value = "0";
+                        subfamilia = document.getElementById("subfamilia").value = "0";
+                        nombre_especie = document.getElementById("nombre_especie").value = "";
+                        autor = document.getElementById("autor").value = "";
+                        clasificacion = document.getElementById("clasificacion").value = "0";
+                        anio = document.getElementById("anio").value = "";
+                        cientifico = document.getElementById("cientifico").value;
+                        clase = document.getElementById("clase").value = "";
+                        ubicacion = document.getElementById("ubicacion").value = "0";
+                        altitudinal = document.getElementById("altitudinal").value = "";
+                        bioma = document.getElementById("bioma").value = "0" 
+                        iucn = document.getElementById("iucn").value = "0";
+                    
+                       
+
+                    }
+                    
+                    
+                    
+                    /* Para funcinalidades de presentar tabla*/
+                    function mostrar_todo(){
+                        limpiar_tabla();
+                        document.getElementById('desplegar').style.display = 'block';
+                    }
+                    
+                    function quitar_todo(){
+                        document.getElementById('desplegar').style.display = 'none';
+                    }
+                    
+                    </script>
+                    </div>
+                    
+                    </div>
+
+
+
+    
+    
+
+
+                <h3 style="padding-top: 20px;"> Flora</h3>
+
+                <p data-aos="fade" style="font-weight: bold; padding-top: 20px;">Taxonomía</p>
+                    <div class="row"><div class="col-md-6">
+           <select class="form-select mb-3" id="genero" aria-label="Default select example">
+              
+        
+                <option selected value="0">Seleccione Género.</option>
+                 {% for gen in genero %}
+                    <option>{{ gen.nom_genero }}</option>
+                 {% endfor %}
+            </select>
+
+            <select class="form-select mb-3" id="clasificacion_flora" aria-label="Default select example">
+              
+        
+                <option selected value="0">Seleccione Clasificación.</option>
+                {% for key, i in tipo_flora.items %}
+                <option >{{i}}</option>
+                 {% endfor %}
+              
+                 
+            </select>
+            
+            <select class="form-select mb-3" id="bioma_flora" aria-label="Default select example">
+                <option selected value="0">Seleccione un Bioma.</option>
+                {% for bio in biomas %}
+                <option>{{ bio.nom_bioma  }}</option>
+                {% endfor %}
+              </select>
+    
+    
+        </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 p-3 ps-0">
+                            <button type="button" onclick="filtrar_flora();" class="btn btn-success"><img src="{% static 'assets/img/BusquedaGeneral/comunes/lupa-blanco.png' %}"  style="width: 1.5625rem; height: 1.5625rem;" > Buscar</button>
+                            <button type="button" onclick="mostrar_todo_flora();" class="btn btn-dark">Listar todo.</button>
+                        </div>
+    <div class="col-md-6 p-3 ps-0">
+        <button type="button"  onclick="limpiar_tabla_flora();" class="btn btn-primary">Limpiar</button>
+    </div></div>
+                </div>
+                <div id="desplegarflora">
+                    <h5>Infomación de búsqueda</h5> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <div class="py-3">
+                        <p>Escriba en el campo de entrada para buscar especies en la tabla:
+                            <button type="button" onclick="quitar_todo_flora();" class="btn"><img src="{% static 'assets/img/gallery/invisible.png' %}"  style="width: 1.5625rem; height: 1.5625rem;" > ocultar</button>
+                        </p>    
+                        <input class="form-control" id="myInput2" type="text" placeholder="Filtrar..">
+                      </div>
+
+                      <div class="table-responsive">
+                        <table id="example2" class="table table-striped table-bordered table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Nombre Flora</th>
+                                    <th>Género</th>
+                                    <th>Bioma</th>
+                                    <th>Clasificación</th>
+                                    <th>Etimología</th>
+                                    <th>Diagnosis</th>
+                                    <th>Distribución</th>
+                                    <th>Autor</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody id="myTable2" style="max-height:6.25rem; overflow:auto; ">
+
+                                {% if data_flora %}
+                                {% for result in data_flora %}
+                                <tr>
+                                    <td>{{ result.nom_flora }}</td>
+                                    <td>{{ result.nom_genero }}</td>
+                                    <td>{{ result.nom_bioma }}</td>
+                                    <td>{{ result.tipo_flora }}</td>
+                                    <td>{{ result.etimologia_flora }}</td>
+                                    <td>{{ result.diagnosis_flora }}</td>
+                                    <td>{{ result.distribucion_composicion_flora }}</td>
+                                    <td>{{ result.autor_flora }}</td>
+                                    
+                                </tr>
+                                {% endfor %}
+                                {% else %}
+                                <h1>No Hay registros</h1>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                        
+                    <script type="text/javascript">
+                
+                            $(document).ready(function(){
+                            $("#myInput2").on("keyup", function() {
+                                var value = $(this).val().toLowerCase();
+                                $("#myTable2 tr").filter(function() {
+                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                });
+                            });
+                            });
+                
+                            function filtrar_flora() {
+                                        
+                                genero = document.getElementById("genero").value;
+                                clasificacion_flora = document.getElementById("clasificacion_flora").value;
+                                bioma_flora = document.getElementById("bioma_flora").value;
+                            
+                                            
+                                $("#myTable2 tr").filter(function() {
+                                    $(this).toggle($(this).text().indexOf(genero) > -1) &&
+                                    $(this).toggle($(this).text().toLowerCase().indexOf(clasificacion_flora) > -1) &&
+                                    $(this).toggle($(this).text().indexOf(bioma_flora) > -1)
+                                });
+                            
+                                    document.getElementById('desplegarflora').style.display = 'block';         
+                                    
+                                    
+                            }
+                        
+        
+                            function limpiar_tabla_flora(){
+                                
+                                /* Muestra elementos de la tabla*/
+                                $("#myTable2 tr").show();
+                                /*Limpia elementos text y combobox*/
+                                genero = document.getElementById("genero").value ="0";
+                                clasificacion_flora = document.getElementById("clasificacion_flora").value = "0";
+                                bioma_flora = document.getElementById("bioma_flora").value = "0";
+                                    
+                            }
+                            
+                            
+                            
+                            /* Para funcinalidades de presentar tabla*/
+                            function mostrar_todo_flora(){
+                                limpiar_tabla_flora();
+                                document.getElementById('desplegarflora').style.display = 'block';
+                            }
+                            
+                            function quitar_todo_flora(){
+                                document.getElementById('desplegarflora').style.display = 'none';
+                            }
+                        
+                
+                    </script>
+                    </div>
+
+                </div>
+                
+    
+    
+
+   
+            </section>
+           </div>
+       </section>
+        
+            </section>
+    
+        <section class="cta-download bg-3 pt-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 text-center">
+                    
+                    <div class="image-block"><img class="phone-thumb img-fluid" src="{% static 'assets/img/BusquedaGeneral/Telefono/app.png' %}" alt=""></div>
+                </div>
+                <div class="col-lg-7 columnainfoapp">
+                    <div class="content-block">
+                        <!-- Title -->
+                        <h2>Descargar la App Ahora .</h2>
+                        <!-- Desctcription -->
+                        <p>Puede encontrar en la app de bioro las distintas especies de la provincia de El Oro Distribuidas en un mapa de manera interactivo, la descarga es gratuita.</p>
+                        <!-- App Badge -->
+                        <div class="app-badge">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" class="btn btn-download">
+                                        <img src="{% static 'assets/img/BusquedaGeneral/Telefono/android.png' %}" alt="" width="60px" style="padding-right: 5px;">
+                                        <div>Obtener en la<span>GOOGLE PLAY</span></div>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+            <div class="container">
+                <div class="intro" style="padding: 60px;">
+                    <h6 class="text-center">Con el Apoyo de:</h6><img class="entidades" src="{% static 'assets/img/BusquedaGeneral/comunes/entidades.png' %}" style="text-align: center;">
+                </div>
+            </div>
+            
+            
+        </div>
+        {% include "secciones/redes_sociales.html" %}
+
+        {% include "secciones/footer.html" %}
+       
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+
+
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+   
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bs-init.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+
+
+
+    <script src="{% static 'js/bs-init.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/father-icons/feather.js' %}"></script>
+    <script src="{% static 'js/father-icons/feather.min.js' %}"></script>
+    <script src="{% static 'js/feather-icons.js' %}"></script>
+    <script src="{% static 'js/Lightbox-Gallery.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/pages/dashboard.js' %}"></script>
+    <script src="{% static 'js/pages/form-editor.js' %}"></script>
+    <script src="{% static 'js/pages/ui-apexchart.js' %}"></script>
+    <script src="{% static 'js/pages/ui-chartjs.js' %}"></script>
+    <script src="{% static 'js/pages/widgets.js' %}"></script>
+    <script src="{% static 'js/simple-datatables/simple-datatables.js' %}"></script>
+    <script src="{% static 'js/vendors.js' %}"></script>
+
+       
+      
+    </body>
+    
+</html>

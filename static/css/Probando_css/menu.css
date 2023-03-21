@@ -1,0 +1,21 @@
+ul li:hover a {
+    background: #e8f3ff;
+}
+
+
+ul.sidebar-item   > li > a:active:before{
+    background: #e8f3ff;
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(46,170,244,.5);
+    width: 5px;
+}
+
+.sidebar-wrapper img:hover {
+    transform: scale(1.1);
+    transition: all 0.6s ease-out 0s;
+  }

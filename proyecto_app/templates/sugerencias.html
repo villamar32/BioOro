@@ -1,0 +1,149 @@
+
+
+{% load static %}
+    
+<!DOCTYPE html>
+<html lang="en" style="font-weight: bold;">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>{% block titulo %} Sugerencias {% endblock titulo %}</title>
+      
+       
+      
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
+
+       
+        
+        <link rel="stylesheet" href="{% static 'css/header.css' %}">
+
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
+        <link rel="stylesheet" href="{% static 'css/Sugerencias_css/fonts/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <link rel="stylesheet" href="{% static 'css/Sugerencias_css/Article-Clean.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Sugerencias_css/Highlight-Blue.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Sugerencias_css/Profile-with-data-and-skills.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Sugerencias_css/sugerencias.css' %}">
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-light navbar-expand-md sticky-top bg-light" >
+            <div class="container-fluid"><a class="navbar-brand" href="{% url 'inicio'%}"><img id="logo" src="{% static 'assets/img/logo/logo.png' %}">Bioro</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav" style="height: 42px;">           
+                        <li class="nav-item" style="margin-right: 15px;"><a class="nav-link active" href="{% url 'infoweb'%}">Acerca de Bioro</a></li>
+                        <li class="nav-item" style="margin-right: 15px;"><a class="nav-link active" href="{% url 'contacto'%}">Contacto</a></li>
+                        <li class="nav-item" style="margin-right: 15px;"><a class="nav-link active" href="{% url 'busquedaavanzada'%}">Búsqueda Avanzada</a></li>
+                        <li class="nav-item" style="margin-right: 15px;"><a class="nav-link active" href="{% url 'galeriageneral'%}">Galería</a></li>  
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+   
+            <div class="row">
+                <div class="col-md-6">
+                    <section data-aos="fade" class="highlight-blue" style="text-align: justify;">
+                        <div class="container">
+                            <div id="seccion-sugerencia" class="intro" >
+                                <h2 class="text-center" style="font-size: 41px;text-align: center;">N u e v a s <br>E s p e c i e s</h2>
+                                <p class="text-center" style="text-align: justify;">Tenemos la suerte de que la provincia de EL ORO<br>posea un increíble despliegue de maravillosas especies. <br>Si es científico que lleva buscando especies nuevas por toda la provincia,<br>&nbsp;y ha encontrado una, envíenos la siguiente información comentando de la nueva especie.<br></p>
+                            </div>
+                            <div class="buttons"></div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-6"  id="columna-form">
+                    <div class="container" id="columna-form">
+                        <div class="row" id="fila-form">
+                            <div class="col-md-12" id="fila">
+                                <form class="p-5"action="" method="post" enctype="multipart/form-data" >{% csrf_token %}
+                                    
+                                    <div class="mb-3">
+                                        <label for="" class="form-label">Nombres completo.</label>
+                                        <input name="nombre" type="text" class="form-control" id="" aria-describedby="" placeholder="Ingrese aquí.">
+                                        
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                                        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese aquí su correo.">
+                                        <div id="emailHelp" class="form-text">Se enviará respuesta a su correo electrónico..</div>
+                                    </div>
+                                   
+                                    <div class="mb-3">
+                                        <label class="form-label">Asunto</label>
+                                        <input name="asunto" type="text" class="form-control" id="inputAddress" placeholder="Indique lo que quiere comunicar.">
+                                    </div>   
+                                    <div class="mb-3">
+                                        <label class="form-label">Celular</label>
+                                        <input name="celular" type="tel" id="typePhone" class="form-control"  placeholder="+593-000000" />
+                                        <div id="emailHelp" class="form-text">Nos pondremos en contacto con usted..</div>
+                                    </div>
+                                    <div class="mb-3">  
+                                        <div class="form-floating">
+                                            <textarea name="comentario" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                            <label for="floatingTextarea2">Comentario</label>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Foto de nueva especie.</label>
+                                        <input name="file" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                                    </div>
+                                   
+                                    {% if post %}
+                                    <div class="alert alert-success">Enviado satisfactoriamente.</div>
+                                    {% endif %}
+                                    
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                   
+                  
+                </div> 
+               
+               
+            </div>
+           
+            {% include "secciones/redes_sociales.html" %}
+         
+        
+       
+        <script src="{% static 'js/js-sugerencia/jquery.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/js-sugerencia/bs-init.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+        <script src="{% static 'js/js-sugerencia/app.js' %}"></script>
+        <script src="{% static 'js/js-sugerencia/father-icons/feather.js' %}"></script>
+        <script src="{% static 'js/js-sugerencia/father-icons/feather.min.js' %}"></script>
+        <script src="{% static 'js/js-sugerencia/feather-icons.js' %}"></script>
+        <script src="{% static 'js/js-sugerencia/main.js' %}"></script>
+        <script src="{% static 'js/js-sugerencia/pages/dashboard.js' %}"></script>
+        <script src="{% static 'js/js-sugerencia/pages/form-editor.js' %}"></script>
+        <script src="{% static 'js/js-sugerencia/pages/ui-apexchart.js' %}"></script>
+        <script src="{% static 'js/js-sugerencia/pages/ui-chartjs.js' %}"></script>
+        <script src="{% static 'js/js-sugerencia/pages/widgets.js' %}"></script>
+        <script src="{% static 'js/js-sugerencia/simple-datatables/simple-datatables.js' %}"></script>
+        <script src="{% static 'js/js-sugerencia/vendors.js' %}"></script>
+      
+        
+        
+    </body>
+</html>
+  

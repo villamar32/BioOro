@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bioro - Orquideas</title>
+
+    <link rel="stylesheet" href="{% static 'css/Probando_cs/simple-datatables/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Probando_css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'css/Probando_css/perfect-scrollbar/perfect-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Probando_css/app.css' %}">
+    <link rel="shortcut icon" href="{% static 'assets/img/logo/logo.ico' %}">
+</head>
+
+<body>
+    <div id="app">
+       
+         <!-- Seccion de panel izquierda start -->
+         {% include "Flora/Orquidea/panel_izq.html" %}
+
+         <!-- end-->
+
+
+        <div id="main">
+           <!-- Seccion de header  nav   start -->
+            {% include "Flora/Orquidea/header.html" %}
+
+           <!-- end-->
+
+            <div class="main-content container-fluid">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <h3>Orquideas</h3>
+                            <p class="text-subtitle text-muted">Especie enblemática del la Provincia De El Oro.</p>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <nav aria-label="breadcrumb" class='breadcrumb-header text-right'>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{% url 'galeriabiomaFlora' %}">Biomas</a></li>
+                                    <li class="breadcrumb-item">Flora</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Orquideas</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- BLOQUE DONDE SE VA LLENANDO LOS HTMLS -->
+
+                <section class="section">
+
+                    {% block content %}
+                    
+                    {% endblock %}
+
+                </section>
+
+               
+            </div>
+
+            {% include "secciones/footer.html" %}
+
+
+        </div>
+    </div>
+    <script src=" {% static 'js/Probando/feather-icons/feather.min.js' %}"></script>
+    <script src=" {% static 'js/Probando/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+    <script src=" {% static 'js/Probando/app.js' %}"></script>
+    <script src=" {% static 'js/Probando/main.js' %}"></script>
+    <script src="{% static 'js/Probando/simple-datatables/simple-datatables.js' %}"></script>
+    <script src="{% static 'js/Probando/vendors.js' %}"></script>
+    
+        
+    
+  
+</body>
+
+</html>

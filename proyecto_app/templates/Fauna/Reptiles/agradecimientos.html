@@ -1,0 +1,42 @@
+{% extends "Fauna/Reptiles/dashboard.html" %}
+
+{% load static %}
+
+{% block content %}
+   
+
+    
+
+
+
+<link rel="stylesheet" href="{% static  'css/agradecimientos/styles.css' %}">
+
+
+
+
+<div id="carousel-example-card" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-bs-target="#carousel-example-card" data-slide-to="0"
+            class="active"></li>
+      
+    </ol>
+    <div class="carousel-inner rounded-0"  role="listbox">
+        <div class="carousel-item active">
+            <img src="{% static 'assets/img/Fauna/Reptiles/agradecimientos.png' %}" style="height: 405px;"
+                class="d-block w-100" alt="First slide">
+        </div>
+       
+    </div>
+
+<div class="card" style="text-align: center; padding-top: 15px; padding-bottom: 70px;">
+   
+    <div class="container">
+        <h1 style="padding-top: 20px;padding-bottom: 20px;font-family: roboto;font-weight: bold;">AGRADECIMIENTOS</h1>
+        <p style="text-align: justify;font-family: roboto;font-size: 18px;">El Museo Ecuatoriano de Ciencias Naturales del Instituo de Nacional de Biodiversidad y el Gobierno Autónomo Decentralizado de la Provincia de El Oro agradece a todos los pobladores de las comunidades de Marcabelí, Limón Playa, Cerro de Arcos, Chepel, Chivaturco, Palo Solo, Ñalacapac, Remolinos, La Puntilla, San Gregorio, La Enramada y San José donde el equipo técnico pernoctó para levantar la información biológica de cada ecosistema. Agradecemos al Ministerio de Ambiente, Dirección El Oro por las facilidades brindadas para levantar información de la Reserva Ecológica Arenillas y Bosque Protector Puyango a&nbsp;través del permiso de investigación NO. 01 2-IC.FAN.DPEO.MAE; a la Secretaría del Agua, provincia de El Oro por las facilidades brindadas para el hospedaje en el Campamento de&nbsp;Tahuin y las facilidades para las evaluaciones bioecológicas en el área. Además agradecemos a la Fundación de Conservación Jocotoco que brindó las comodidades necesarias para los&nbsp;muestreos realizados en la Reserva Ecológica Buenaventura. Un reconocimiento especial a los técnicos de la Secretaría de Gestión Ambiental del GADPEO, por la gestión interna para&nbsp;la publicación de esta obra. El material fotográfico usado para completar la sistematización&nbsp;de la guía, fue generosamente autorizado por Santiago Ron y Omar Torres. Agradecemos&nbsp;a todas las personas que de manera directa e indirecta han ayudado para la elaboración con esta guía, especialmente a la gente orense que de manera incondicional se involucraron en&nbsp;el desarrollo de esta investigación.<br></p>
+    </div>
+    <div class="container"><img src="{% static 'assets/img/BusquedaGeneral/comunes/entidades.png' %}"></div>
+    <script src="{% static 'css/agradecimientos/bootstrap.min.js'%}"></script>
+   
+</div>
+
+{% endblock %}

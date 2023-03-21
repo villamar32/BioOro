@@ -1,0 +1,86 @@
+
+{% extends "Flora/Orquidea/dashboard.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+    
+    
+
+   
+
+
+    <div class="card">
+      <div class="card-content">
+          <div class="card-body">
+              <h4 class="card-title">Introducción</h4>
+          </div>
+          
+          <div class="card-body">
+            
+              <p class="card-text">
+                Dentro de la riqueza florística de la
+                provincia de El Oro, las orquídeas
+                y las bromelias sobresalen por su
+                gran diversidad taxonómica y su
+                alto potencial a nivel económico,
+                de manejo y conservación.
+              </p>
+              <h4 class="card-title">Familias</h4>
+              <p class="card-text">
+                Orchidaceae es una de las familias más diversas del planeta y puede contribuir
+                con hasta el 50% de la diversidad de flora de algunas regiones del Neotrópico. 
+                Un claro ejemplo es la provincia de El Oro donde
+                nuestro estudio ha registrado alrededor de 304 especies de orquídeas lo que
+                equivale aproximadamente a un 37% del total de plantas vasculares conocidas
+                reportadas para la provincia. En su composición taxonómica se destaca la
+                subfamilia Epidendroideae, la que concentra el 62.5% de las tribus, 75% de
+                las subtribus, 87.75% de los géneros y 92.42% de las especies; es decir la
+                mayoría de los taxones de Orchidaceae se encuentra aglomerados en este
+                taxón.
+                <br></br>
+                Epidendroideae presenta dos tribus que se destacan por la cantidad de géneros
+                y especies; por un lado Cymbidieae concentra más de la mitad de los géneros
+                registrados para la provincia, pero apenas agrupa el 34% de las especies. Esto
+                se debe a que muchos de los géneros de este taxón presentes son de media o
+                baja diversidad, o son monotípicos para la provincia. Por su parte, Epidendreae
+                contiene una menor cantidad de géneros, alrededor del 27%, pero acumula
+                la mayor diversidad de especies, con un total de 156, lo que representa más
+                del 50% de los reportes de la familia para El Oro. Esto se debe a
+                que este taxón agrupa algunos de los géneros más diversos del Ecuador y del
+                Neotrópico como son Epidendrum, Stelis, Lepanthes, entre los principales.
+                Las tribus Sobralieae y Vandeae, representan menos del 6% del total de la
+                diversidad de la familia.
+                <br></br>
+                Las subfamilias Orchidoideae y Vanilloideae representan un porcentaje
+                marginal de la diversidad general en todas las categorías taxonómicas.
+                Vanilloideae constituye apenas el 0.3% del total, pues solo incluye una especie;
+                en tanto que Orchidoideae contiene el 7.23% de las especies y concentra
+                cuatro géneros y 22 especies.
+              </p>
+          </div>
+          <div id="carousel-example-card" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#carousel-example-card" data-slide-to="0"
+                    class="active"></li>
+              
+            </ol>
+            <div class="carousel-inner rounded-0"  role="listbox">
+                <div class="carousel-item active">
+                    <img src="{% static 'assets/img/Flora/Orquideas/intro.jpg' %}"
+                        class="d-block w-100" alt="First slide">
+                </div>
+               
+            </div>
+            
+        </div>
+      </div>
+  </div>
+    
+    
+  
+  
+
+{% endblock %}

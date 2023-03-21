@@ -1,0 +1,74 @@
+{% extends 'areasnat.html' %}
+{% block tituloN %} Sistemas Ecológicos y Biomas {% endblock tituloN %}
+{% block contenido %}
+{% load static %}
+    
+
+<div class="card" style="padding: 20px 0 10px 0" >
+
+    <div class="areas_titulo" >
+        <h3> Sistemas Ecológicos y Biomas </h3>
+    </div>
+
+    <div class="parrafos">
+        <p>
+            El Oro es la provincia ecuatoriana donde la cordillera de
+            los Andes se acerca más al mar, presenta una gradiente 
+            altitudinal desde los 0 m hasta los 3.900 m lo que ha originado 
+            una diversidad de climas que van desde el tropical semiárido en
+            la zona costera, tropical seco en la zona baja piedemonte y 
+            semihúmedo en la parte alta de la provincia, donde se evidencia
+            un clima de alta montaña específicamente en los cantones 
+            Chilla y Zaruma. Este factor ha sido preponderante para la 
+            radiación adaptativa de una gran biodiversidad.
+        </p>
+    </div>
+
+    <div class="parrafos">
+        <p>
+            La compleja orografía de la provincia, ha dado paso a un 
+            mosaico paisajístico de 19 sistemas ecológicos (MAE, 2013a),
+            donde predominan las áreas intervenidas (ganadería, agricultura, 
+            áreas urbanas, etc.) representando un 62% del área total de la 
+            provincia, siguiendo el bosque siempreverde estacional 
+            piemontano del Catamayo-Alamor (11%), Manglar de 
+            Jama-Zapotillo (4%), el bosque semideciduo de tierras bajas 
+            de Jama-Zapotillo (3%), el bosque bajo arbustal deciduo de 
+            tierras bajas del Jama-Zapotillo (2%), bosque siempreverde 
+            montano del Catamayo Alamor (2%), entre otros.
+        </p>
+    </div>
+
+    <div class="areas_foto">
+        <img src="{% static 'assets/img/areas_naturales/suelos.jpg' %}" alt="">
+    </div>
+    <div class="areas_foto">
+        <img src="{% static 'assets/img/areas_naturales/sistemas_ecologicos.jpg' %}" alt="">
+    </div>
+
+    <div class="parrafos">
+        <p>
+            De los 19 sistemas ecológicos, se establecieron siete biomas para 
+            facilitar los estudios y análisis de los datos levantados de 
+            flora y fauna en el amplio sistema de clasificación propuesta 
+            por el MAE (2013a) en la provincia de El Oro. Un bioma se define 
+            como un área con uno o varios sistemas ecológicos que presentan
+            características fisonómicas similares y están determinados por
+            el mismo gradiente altitudinal (MECN-INB-GADPEO, 2015). Los 
+            biomas clasificados y caracterizados fueron los siguientes: 
+            (1) Manglar y zona marino costera, (2) Bosque seco y deciduo
+            de tierras bajas de Jama-Zapotillo, (3) Bosques piemontanos
+            del Catamayo-Alamor, (4) Bosques montanos bajos del Catamayo-Alamor,
+            (5) Bosques montanos del Catamayo-Alamor, (6) Bosques montano 
+            altos del Catamayo-Alamor, (7) Herbazales y páramos.
+    </div>
+
+    <div class="areas_foto">
+        <img src="{% static 'assets/img/areas_naturales/biomas.jpg' %}" alt="">
+    </div>
+    <div class="areas_foto">
+        <img src="{% static 'assets/img/areas_naturales/tabla_sistemaseco.jpg' %}" alt="">
+    </div>
+</div>
+
+{% endblock contenido %}

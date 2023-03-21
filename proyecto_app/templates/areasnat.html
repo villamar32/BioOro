@@ -1,0 +1,221 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'assets/img/logo/logo.ico' %}">
+    <title> {% block tituloN %}  Areas Naturales   {% endblock tituloN %} </title>
+
+    
+
+    <link rel="stylesheet" href="{% static 'css/simple-datatables/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'css/perfect-scrollbar/perfect-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <link rel="shortcut icon" href="{% static  'assets/images/favicon.svg' %}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/areas_natu.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+       
+         <!-- Seccion de panel izquierda start -->
+         {% include "Block_lateral_Naturales.html" %}
+
+         <!-- end-->
+
+
+        <div id="main">
+           <!-- Seccion de header  nav   start -->
+            {% include "Block_header_Naturales.html" %}
+
+          
+
+           <div class="main-content container-fluid">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <h3 style="margin-top: 0; margin-bottom: 0.5rem; font-weight:900;line-height: 1.2; color: #475f7b;">Areas Naturales</h3>
+                        <p class="text-subtitle text-muted"> Provincia De El Oro.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <nav aria-label="breadcrumb" class='breadcrumb-header text-right'>
+                            <ol class="breadcrumb">
+                              
+                                <li class="breadcrumb-item">Bioro</li>
+                                <li class="breadcrumb-item active" aria-current="page">Áreas naturales</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+            <!-- end-->
+           
+    
+
+            <div class="main-content container-fluid">
+                
+                <!-- BLOQUE -->
+                <section class="section">
+
+                    {% block contenido %}
+
+                    <div class="ratio ratio-16x9">
+                        <video src="{% static 'assets/img/gallery/areas_nat.mp4' %}" controls autoplay loop></video>
+                      </div>
+                    <div class="card">
+
+
+
+                        <div class="areas_foto " style="padding-top: 20px;">
+                            <img src="{% static 'assets/img/areas_naturales/ini_areasnat.jpeg' %}" alt="">
+                        </div>
+                        
+                        <div class="parrafos" style="padding-top: 20px;padding-bottom: 50px;">
+                            <p>
+                                La provincia de El Oro es parte de la vertiente occidental de los Andes con influencia marino costera, 
+                                donde confluyen los bosques tropicales húmedos de la región biogeográfica del Chocó 
+                                (bosques tropicales lluviosos de la costa) y el bosque seco ecuatorial tumbesino 
+                                (bosque tropical seco de la costa). Presenta una gradiente altitudinal entre los 0 
+                                hasta los 3.900 m originando un mosaico de paisajes de 19 sistemas ecológicos, en 
+                                cuatro pisos zoogeográficos. Debido a estos factores, el clima es variable y contrasta, 
+                                entre el seco costero y el lluvioso de los Andes, lo que ha permitido la adaptación, 
+                                dispersión y evolución de una gran diversidad de especies de flora y fauna.
+                            </p>
+                            <p>   
+                                Dentro del levantamiento de información bioecológica se identificó a los bosques piemontanos 
+                                (pie de monte) como los más diversos y con mayor endemismo de la provincia de El Oro. 
+                                Sin embargo, esta extraordinaria diversidad y endemismo en la provincia de El Oro 
+                                ha sido afectada por diferentes actividades antropogénicas como la minería, la 
+                                deforestación y la conversión de los ecosistemas naturales en zonas agrícolas y 
+                                ganaderas, provocando la fragmentación de los ecosistemas y el aislamiento de las 
+                                poblaciones biológicas silvestres, elevando los niveles de riesgo de extinción. 
+                                Actualmente la provincia conserva el 30% de la cobertura vegetal original.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    
+
+                    {% endblock contenido%}
+
+                </section>
+            </div> 
+            <footer>
+                <div class="footer-area fix">
+                    <img class="logo-pre"  src="{% static 'assets/img/gallery/prefectura.png' %}">
+                    <!-- Footer Caption -->
+                    <div class="footer-caption wow fadeInRight" data-wow-delay=".6s">
+                        <div class="footer-menu ">
+                            <div class="single-menu">
+                                <div class="single-footer-caption mb-50">
+                                    <div class="footer-tittle">
+                                        <ul>
+                                            <li><a>Teléfono: 072933114</a></li>
+                                            <li><a>Dirección: Junin s/n y Av. 25 de Junio</a></li>
+                                            <li><a>Gobierno Autónomo Descentralizado Provincial de El Oro</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="copyright pt-40">
+                            <p><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | GADPEO</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="redes_sociales">
+                    <ul> 
+                        <li><a href="https://www.facebook.com/PrefecturaElOro/"  target="_blank" class="fab fa-facebook"></a></li>
+                        <li><a href="https://www.instagram.com/prefecturaeloro/" target="_blank" class="fab fa-instagram"></a></li>
+                        <li><a href="https://twitter.com/PrefecturaElOro"  target="_blank" class="fab fa-twitter"></a></li>
+                    </ul>
+                </div>
+                
+           </footer>
+
+        </div>
+
+
+        
+    </div>
+    <script src=" {% static 'js/feather-icons/feather.min.js' %}"></script>
+    <script src=" {% static 'js/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+    <script src=" {% static 'js/app.js' %}"></script>
+    <script src=" {% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/simple-datatables/simple-datatables.js' %}"></script>
+    <script src="{% static 'js/vendors.js' %}"></script>
+    
+
+    
+   <!-- JS here -->
+	
+		<!-- JS here -->
+	
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="{% static 'js/vendor/modernizr-3.5.0.min.js'%}"></script>
+		
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="{% static 'js/vendor/jquery-1.12.4.min.js'%}"></script>
+        <script src="{% static 'js/popper.min.js'%}"></script>
+        <script src="{% static 'js/bootstrap.min.js'%}"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="{% static 'js/jquery.slicknav.min.js'%}"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+        <script src="{% static 'js/slick.min.js'%}"></script>
+		<!-- One Page, Animated-HeadLin -->
+        <script src="{% static 'js/wow.min.js'%}"></script>
+		<script src="{% static 'js/animated.headline.js'%}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.js'%}"></script>
+
+		<!-- Scrollup, nice-select, sticky -->
+        <script src="{% static 'js/jquery.scrollUp.min.js'%}"></script>
+        <script src="{% static 'js/jquery.nice-select.min.js'%}"></script>
+		<script src="{% static 'js/jquery.sticky.js'%}"></script>
+        
+        <!-- contact js -->
+        <script src="{% static 'js/contact.js'%}"></script>
+        <script src="{% static 'js/jquery.form.js'%}"></script>
+        <script src="{% static 'js/jquery.validate.min.js'%}"></script>
+        <script src="{% static 'js/mail-script.js'%}"></script>
+        <script src="{% static 'js/jquery.ajaxchimp.min.js'%}"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="{% static 'js/plugins.js'%}"></script>
+        <!-- <script src="{% static 'js/main.js'%}"></script> -->
+        <script src="{% static 'js/main_copy.js'%}"></script>
+        
+        <script src="{% static 'js/areas_nat.js'%}"></script>
+    
+  
+</body>
+
+</html>

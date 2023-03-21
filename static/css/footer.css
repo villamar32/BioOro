@@ -1,0 +1,61 @@
+
+body{
+  overflow-x: hidden;
+}
+
+
+
+.seccion-logo-pref img {
+  max-width: 246px;
+  height: 73px;
+  display: block;
+  margin: auto;
+  
+}
+
+
+@media (min-width: 300px) {
+  .footer-derecho {
+    width: 99%;
+    background: #78b242;
+    padding: 25px 20px 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-derecho {
+    width: 110%;
+    background: #78b242;
+    padding: 25px 20px 20px;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .footer-derecho {
+    width: 150%;
+    background: #78b242;
+    padding: 25px 80px 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer-derecho {
+    width: 145%;
+    overflow-x: hidden;
+    background: #78b242;
+    padding: 25px 20px 35px 65px;
+  }
+}
+
+
+.footer-derecho h1 {
+  color: var(--bs-white);
+  font-size: 15px;
+  height: 21px;
+}
+
+.separacion {
+  padding-top: 20px;
+}
+

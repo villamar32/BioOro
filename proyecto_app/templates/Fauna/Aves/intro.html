@@ -1,0 +1,81 @@
+
+{% extends "Fauna/Aves/dashboard.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+    
+    
+
+   
+
+
+    <div class="card">
+      <div class="card-content">
+          <div class="card-body">
+              <h4 class="card-title">Introducción</h4>
+          </div>
+          
+          <div class="card-body">
+            
+              <p class="card-text">
+                Las aves constituyen el grupo de vertebrados mejor estudiados en el mundo. La mayoría de las aves
+                son de hábitos diurnos, tienden a ser abundantes y generalmente son muy visibles y auditivamente
+                atractivas, lo que las hace relativamente fáciles de estudiar. Los distintos requerimientos de hábitat
+                de las especies de aves dentro de un ecosistema, combinados con formas de estudio definidas, hacen
+                al grupo particularmente útil como indicadores en evaluaciones ecológicas rápidas, estudios en los
+                cambios en el ecosistema y monitoreos.
+                <br></br>
+                Ecuador por sus condiciones geográficas, topográficas y ecológicas, presentan una alta diversidad de
+                aves, siendo el cuarto en el mundo y el primero en el número de especies por unidad de área. A pesar
+                que en los últimos años se han incrementado el estudio de aves, en algunos lugares de Ecuador aún
+                se tiene pocos conocimientos sobre su riqueza, diversidad, distribución y ecología.
+                <br></br>
+                El conocimiento básico de aves de un sitio de determinado, es de suma importancia debido a que es
+                un atreyente fundamental para el desarrollo del turismo y la conservación de los pocos remanentes
+                de bosques existentes en la provincia de El Oro.
+                
+              </p>
+              <h4 class="card-title">Familias</h4>
+              <p class="card-text">
+                Se determinó la presencia de 2 especies endémicas regionales de aves (Pyrrhura orcesi y
+                Scytalopus robbinsi).
+                <br></br>
+                Se registraron 59 especies migratorias, las especies que provienen del hemisferio norte las más
+                abundantes (42). Además se observaron cinco especies del hemisferio austral, cinco especies que
+                se dispersan del Perú, cuatro migrantes intratropicales y dos visitante pelágicos. Cuarenta y ocho
+                especies de aves registradas en el estudio se encuentran restringidas a cuatro centros endémicos
+                propuestos por Sttattersfield para el Ecuador. Veinte y siete especies tienen distribución
+                restringida a las Bajuras Tumbesinas, 11 especies son endémicas para las Bajuras del Chocó y dos
+                especies se encuentran en los Andes Centrales del Sur. Existen siete especies que están restringidas
+                al Valle del Marañon y también a las Bajuras Tumbesinas. Los niveles de endemismo de
+                las aves no son tan marcados como en otros grupos, tales como los anfibios o en algunas familias
+                de plantas e insectos; mientras más pequeños y menos móviles son los organismos, sus niveles de
+                endemismo y especialización son mayores. 
+              </p>
+          </div>
+          <div id="carousel-example-card" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#carousel-example-card" data-slide-to="0"
+                    class="active"></li>
+              
+            </ol>
+            <div class="carousel-inner rounded-0"  role="listbox">
+                <div class="carousel-item active">
+                    <img src="{% static 'assets/img/Fauna/Aves/intro.jpg' %}"
+                        class="d-block w-100" alt="First slide">
+                </div>
+               
+            </div>
+            
+        </div>
+      </div>
+  </div>
+    
+    
+  
+  
+
+{% endblock %}

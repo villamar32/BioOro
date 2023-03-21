@@ -1,0 +1,365 @@
+{% extends "Fauna/Mamiferos/dashboard.html" %}
+
+{% load static %}
+
+
+
+
+{% block content %}
+  
+      
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
+        <link rel="stylesheet" href="{% static 'css/themify.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Fauna/Mamiferos/Busqueda/Article-List.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Fauna/Mamiferos/Busqueda/busqueda.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Fauna/Mamiferos/Busqueda/Carousel-Hero.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Fauna/Mamiferos/Busqueda/Data-Table-1.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Fauna/Mamiferos/Busqueda/Data-Table.css' %}">
+
+
+        
+       
+
+      
+      
+        <style type="text/css">
+            #desplegar {
+                display: none;
+            }
+
+        </style>
+
+    
+        <div>
+            <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
+                <div class="carousel-inner pulse animated">
+                    <div class="carousel-item active">
+                        <div class="bg-light border rounded border-light hero-nature carousel-hero jumbotron py-5 px-4" style="height: 16.6875rem;">
+                            <h1 class="hero-title">Búsqueda Mamiferos<br></h1>
+                            <p class="hero-subtitle">Puede realizar la búsqueda de las distintas especies existentes en la Provincia de El ORO almacenadas en nuestra base de datos.<br></p>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="bg-light border rounded border-light hero-photography carousel-hero jumbotron py-5 px-4">
+                            <h1 class="hero-title">Búsqueda Mamiferos<br></h1>
+                            <p class="hero-subtitle">Puede realizar la búsqueda de las distintas especies existentes en la Provincia de El ORO almacenadas en nuestra base de datos.<br></p>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="bg-light border rounded border-light hero-technology carousel-hero jumbotron py-5 px-4">
+                            <h1 class="hero-title">Búsqueda Mamiferos<br></h1>
+                            <p class="hero-subtitle">Puede realizar la búsqueda de las distintas especies existentes en la Provincia de El ORO almacenadas en nuestra base de datos.<br></p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
+                </ol>
+            </div>
+        </div>
+        <div>
+            
+            <section class="section">
+                <div class="card">
+                    <section id="seccion-tabla">
+                            <p data-aos="fade" style="padding-top: 20px;">Puede combinar la búsqueda para obtener resultados</p>
+                            <p data-aos="fade" style="font-weight: bold;">Taxonomía</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="form-select mb-3" id="orden" aria-label="Default select example">
+                        
+                                        <option selected value="0">Seleccione orden.</option>
+                                        {% for orden in ordenes %}
+                                        <option>{{ orden.nom_orden }}</option>
+                                        
+                                        {% endfor %}
+                            
+                                    </select>
+                                    <select class="form-select mb-3" id="familia" aria-label="Default select example">
+                                        <option selected value="0">Seleccione una familia.</option>
+                                        {% for fam in familias %}
+                                        <option>{{ fam.nom_familia }}</option>
+                                        
+                                        {% endfor %}
+                            
+                                    </select>
+                                    <select class="form-select mb-3" id="subfamilia" aria-label="Default select example">
+                                        <option selected value="0">Seleccione una subfamilia.</option>
+                                        {% for sub in subfamilias %}
+                                        <option>{{ sub.nom_subfamilia }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <input class="form-control mb-3" type="text" id="nombre_especie"  placeholder="Nombre común" aria-label="default input example">
+                                    <input class="form-control mb-3" type="text" id="autor" placeholder="Autor de la descripción" aria-label="default input example">
+                                </div>
+                            
+                                <div class="col-md-6">
+                            
+                                    
+                                <input class="form-control mb-3" type="text" id="anio" placeholder="Año de descubrimiento" aria-label="default input example">
+                                <input class="form-control mb-3" type="text" id="cientifico" placeholder="Nombre científico" aria-label="default input example">
+                                <input class="form-control mb-3" type="text" id="clase" placeholder="Clase" aria-label="default input example">
+                                </div>
+                            </div>
+                        
+                            <p data-aos="fade" style="font-weight: bold;">Localidad</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="form-select mb-3" id="ubicacion" aria-label="Default select example">
+                                    <option selected value="0">Seleccione Ubicación.</option>
+                            
+                                    {% for ub in ubicacion %}
+                                    <option>{{ ub.ubicacion  }}</option>
+                                    {% endfor %}
+                                    
+                                    </select>
+                                    <input class="form-control mb-3" id="altitudinal" type="text" placeholder="Rango altitudinal en metros" aria-label="default input example">
+                                    
+                                </div>
+                
+                                <div class="col-md-6">
+                
+                    
+                
+                                </div>
+                            
+                            </div>
+
+
+                            <p data-aos="fade" style="font-weight: bold;">Estado de conservación</p>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="form-select mb-3" id="iucn" aria-label="Default select example">
+                                        <option selected value="0">Seleccione Lista Roja IUCN.</option>
+                                        {% for i in estado_conservacion %}
+                                        <option>{{i.categoria}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                            </div>
+                            
+                            
+                    
+                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-6 p-3 ps-0">
+                                                        <button type="button" onclick="filtrar_fauna();" class="btn btn-success"><img src="{% static 'assets/img/BusquedaGeneral/comunes/lupa-blanco.png' %}"  style="width: 1.5625rem; height: 1.5625rem;" > Buscar</button>
+                                                        <button type="button" onclick="mostrar_todo();" class="btn btn-dark">Listar todo.</button>
+                                                    </div>
+                                                    <div class="col-md-6 p-3 ps-0">
+                                                        <button type="button" onclick="limpiar_tabla();"  class="btn btn-primary">Limpiar</button>
+                                                    </div>
+                                                </div>
+                            </div>
+                            <div id="desplegar">
+                                <h5>Infomación de búsqueda</h5> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                                <div class="py-3">
+                                    <p>Escriba en el campo de entrada para buscar especies en la tabla:  
+                                        <button type="button" onclick="quitar_todo();" class="btn"><img src="{% static 'assets/img/gallery/invisible.png' %}"  style="width: 1.5625rem; height: 1.5625rem;" > ocultar</button>
+                                    </p>  
+                
+                                    <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
+                                </div>
+            
+                                <div class="table-responsive col-lg-12">
+                                    <table id="example" class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre Científico</th>
+                                                <th>Nombre de especie</th>
+                                                <th>Clasificación</th>
+                                                <th>Rango Altitudinal</th>
+                                                <th>Ubicación</th>
+                                                <th>Bioma</th>
+                                                <th>Descripción</th>
+                                                <th>Nombre en Ingles</th>
+                                                <th>Estado de conservación</th>
+                                                <th>Nicho Trófico</th>
+                                                <th>Autor</th>
+                                                <th>Familia</th>
+                                                <th>Sub-familia</th>
+                                                <th>Orden</th>
+                                                <th>Clase</th>
+                                                <th>Año descubrimiento</th>
+                                                <th>Migración</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="myTable" style="max-height:6.25rem; overflow:auto; ">
+                                            {% if data_fauna != None  %}
+                                            {% for result in data_fauna %}
+                                            <tr>
+                                                <td>{{ result.nom_cientifico }}</td>
+                                                <td>{{ result.nom_especie }}</td>
+                                                <td>{{ result.tipo }}</td>
+                                                <td>{{ result.rango_altitudinal }}</td>
+                                                <td>{{ result.ubicacion }}</td>
+                                                <td>{{ result.nom_bioma }}</td>
+                                                <td>{{ result.descripcion }}</td>
+                                                <td>{{ result.nom_ingles }}</td>
+                                                <td>{{ result.categoria }}</td>
+                                                <td>{{ result.nom_nicho }}</td>
+                                                <td>{{ result.ape_persona }}</td>
+                                                <td>{{ result.nomb_familia }}</td>
+                                                <td>{{ result.nom_subfamilia }}</td>
+                                                <td>{{ result.nom_orden }}</td>
+                                                <td>{{ result.nom_clase }}</td>
+                                                <td>{{ result.anio_descubrimiento }}</td>
+                                                <td>{{ result.nom_migracion }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        {% else %}
+                                            <H3 style="padding-bottom: 10px;"> No existen especies de Mamíferos en este bioma. </H3>
+                                        {% endif %}
+                                        </tbody>
+                                    </table>
+                                </div> 
+                                <script type="text/javascript">
+                            
+                                $(document).ready(function(){
+                                $("#myInput").on("keyup", function() {
+                                    var value = $(this).val().toLowerCase();
+                                    $("#myTable tr").filter(function() {
+                                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                    });
+                                });
+                                });
+                            
+                                function filtrar_fauna() {
+                                        
+                                        orden = document.getElementById("orden").value;
+                                        familia = document.getElementById("familia").value;
+                                        subfamilia = document.getElementById("subfamilia").value;
+                                        nombre_especie = document.getElementById("nombre_especie").value;
+                                        autor = document.getElementById("autor").value;
+                                    
+                                        anio = document.getElementById("anio").value;
+                                        cientifico = document.getElementById("cientifico").value;
+                                        clase = document.getElementById("clase").value;
+                                        ubicacion = document.getElementById("ubicacion").value;
+                                        altitudinal = document.getElementById("altitudinal").value;
+                                        
+                                        iucn = document.getElementById("iucn").value;
+                                                    
+                                        $("#myTable tr").filter(function() {
+                                            $(this).toggle($(this).text().indexOf(orden) > -1) &&
+                                            $(this).toggle($(this).text().indexOf(familia) > -1) &&
+                                            $(this).toggle($(this).text().indexOf(subfamilia) > -1) &&
+                                            $(this).toggle($(this).text().indexOf(nombre_especie) > -1) &&
+                                            $(this).toggle($(this).text().indexOf(autor) > -1) &&
+
+                                            $(this).toggle($(this).text().indexOf(anio) > -1) &&
+                                            $(this).toggle($(this).text().indexOf(cientifico) > -1) &&
+                                            $(this).toggle($(this).text().indexOf(ubicacion) > -1) &&
+                                            $(this).toggle($(this).text().indexOf(altitudinal) > -1) &&
+                                        
+                                            $(this).toggle($(this).text().indexOf(iucn) > -1)
+                                            });
+                                    
+                                            document.getElementById('desplegar').style.display = 'block';         
+                                    
+                                    
+                                    }
+                
+                                    function limpiar_tabla(){
+                                    
+                                        /* Muestra elementos de la tabla*/
+                                        $("#myTable tr").show();
+                                        /*Limpia elementos text y combobox*/
+                                        orden = document.getElementById("orden").value = "0";
+                                        familia = document.getElementById("familia").value = "0";
+                                        subfamilia = document.getElementById("subfamilia").value = "0";
+                                        nombre_especie = document.getElementById("nombre_especie").value = "";
+                                        autor = document.getElementById("autor").value = "";
+                                        anio = document.getElementById("anio").value = "";
+                                        cientifico = document.getElementById("cientifico").value = "";
+                                        clase = document.getElementById("clase").value = "";
+                                        ubicacion = document.getElementById("ubicacion").value = "0";
+                                        altitudinal = document.getElementById("altitudinal").value = "";
+                                        
+                                        iucn = document.getElementById("iucn").value = "0";
+                                    
+                                    
+                
+                                    }
+                                    
+                                    
+                                    
+                                    /* Para funcinalidades de presentar tabla*/
+                                    function mostrar_todo(){
+                                    
+                                        document.getElementById('desplegar').style.display = 'block';
+                                    }
+                                    
+                                    function quitar_todo(){
+                                        document.getElementById('desplegar').style.display = 'none';
+                                    }
+                                    
+                
+
+
+
+
+                            
+                                </script>
+                                </div>
+            
+                </div>
+                           
+        </section>
+
+         
+
+
+            
+    
+        <section class="cta-download bg-3 pt-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 text-center">
+                    
+                    <div class="image-block"><img class="phone-thumb img-fluid" src="{% static 'assets/img/BusquedaGeneral/Telefono/app.png' %}" alt=""></div>
+                </div>
+                <div class="col-lg-7 columnainfoapp">
+                    <div class="content-block">
+                        <!-- Title -->
+                        <h2>Descargar la App Ahora .</h2>
+                        <!-- Desctcription -->
+                        <p>Puede encontrar en la app de bioro las distintas especies de la provincia de El Oro Distribuidas en un mapa de manera interactivo, la descarga es gratuita.</p>
+                        <!-- App Badge -->
+                        <div class="app-badge">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" class="btn btn-download">
+                                        <img src="{% static 'assets/img/Fauna/Mamiferos/android.png' %}" alt="" width="60px" style="padding-right: 5px;">
+                                        <div>Obtener en la<span>GOOGLE PLAY</span></div>
+                                    </a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+           
+
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+       
+      
+        {% endblock %}    

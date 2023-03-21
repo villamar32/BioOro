@@ -1,0 +1,97 @@
+{% extends 'inicio.html' %}
+    {% block cuerpo %}
+    {% load static %}
+    <header>
+        <!-- Header Start -->
+       <div class="header-area header-sticky">
+            <div class="header-wrapper d-flex flex-wrap align-items-center justify-content-between">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="{% url 'inicio' %}"><img class="tamano" src="{% static 'assets/img/logo/logo.png' %}" alt=""></a>
+                </div>
+                <!-- Main-menu -->
+                <div class="main-menu d-none d-lg-block">
+                    <nav>
+                        <ul id="navigation">                                                                                                                               
+                            <li><a href="{% url 'inicio' %}">Bio-Oro</a></li>
+                            <li><a  href="{% url 'infoweb'%}">Acerca de Bio-Oro</a></li>
+                            <li><a  href="{% url 'sugerencias'%}">Sugerencias</a></li>
+                            <li><a  href="{% url 'contacto'%}">Contacto</a></li>
+                            <li><a  href="{% url 'busquedaavanzada'%}">Búsqueda Avanzada</a></li>
+                            <li><a  href="{% url 'galeriageneral'%}">Galería</a></li>
+                            
+                            <!--<li><a href="">Services</a></li>
+                            <li><a href="">History</a></li>
+                            <li><a href="">Gallery</a></li>
+                            <li><a href="">Blog</a>
+                                <ul class="submenu">
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="single-blog.html">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Pages</a>
+                                <ul class="submenu">
+                                    <li><a href="elements.html">Element</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>-->
+                        </ul>
+                    </nav>
+                </div>          
+                <div class="col-12">
+                    <div class="mobile_menu d-block d-lg-none"></div>
+                </div>
+            </div>
+       </div>
+        <!-- Header End -->
+    </header>
+
+    <div>
+        <div class="video-container">
+            <img src="{% static 'assets/img/gallery/fondoplantas.jpeg' %}" style=" background-color: rgba(15, 14, 14, 0.3);" autoplay loop></img> 
+        </div> 
+
+        <section>
+            
+            <div class="clients-area section-padding03">
+                <div class="container">
+                    <!-- Section Tittle -->
+                    <div class="row ">
+                        <div class="col-lg-12">
+                            <div class="section-tittle text-center mb-100">
+                                <span class=" wow fadeInUp" style="color: #fff;" data-wow-delay=".2s">Biomas</span>
+                                
+                                <h2 class=" wow fadeInUp"  style="color: #fff;" data-wow-delay=".3s">Se listan los principales biomas de la provincia de el Oro</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-1">
+
+                        {%  for b in bioma  %}
+
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-offers mb-50 wow fadeInUp" data-wow-delay=".2s" >
+                                <div class="offers-img">
+                                    <img src="{{b.url_imagen.url}}" alt="">
+                                </div>
+                                <div class="offers-cap">
+                                    <span> {{b.id_bioma.id_bioma}} </span>
+                                    <h3><a href="{% url 'flora' b.id_bioma.id_bioma%}"> {{ b.id_bioma.nom_bioma }} </a></h3>
+                                    <p></p>
+                                    <p style="color: #fff;">Siglas: {{b.id_bioma.sigla_bioma}}</p> 
+                                    <p style="color: #fff;">Altitudinal: {{b.id_bioma.des_altitudinal_bioma}}, {{b.id_bioma.has_altitudinal_bioma}}</p> <br>
+                                    <a href="{% url 'flora' b.id_bioma.id_bioma%}"><i class="fas fa-arrow-up"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+            </div>      
+        </section>       
+    </div>
+    {% endblock cuerpo %}

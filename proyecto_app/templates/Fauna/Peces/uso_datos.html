@@ -1,0 +1,58 @@
+{% extends "Fauna/Peces/dashboard.html" %}
+
+{% load static %}
+
+{% block content %}
+   
+
+    
+    <link rel="stylesheet" href="{% static 'css/Article-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <div id="carousel-example-card" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            
+        
+        </ol>
+        <div class="carousel-inner rounded-0"  role="listbox">
+            <div class="carousel-item active">
+                <img src="{% static 'assets/img/Fauna/Peces/uso_datos.png' %}" style="height: 405px;"
+                    class="d-block w-100" alt="First slide">
+        </div>
+        
+    </div>
+    <div class="card">
+        <section class="article-clean">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2" style="padding-top: 70px; padding-bottom: 80px;">
+                    
+                        <div>
+                            <h2 style="font-family: Roboto;font-weight: bold;"><strong>Uso de los datos</strong><br></h2>
+                            <h2 style="font-family: Roboto;font-weight: bold;"><strong>Términos y condiciones para el uso de los datos</strong><br></h2>
+                        </div>
+                        <div class="text">
+                            <h2 style="font-family: Roboto;font-weight: bold;">Licencia</h2>
+                            <p style="font-family: Roboto;font-size: 14px;text-align: justify;">Los datos de las colecciones accesibles por Bio - Oro están disponibles bajo la licencia:<br></p>
+                        </div>
+                        <div class="text">
+                            <h2 style="font-family: Roboto;font-weight: bold;"><strong>Límites al tráfico</strong><br></h2>
+                            <p style="font-family: Roboto;font-size: 14px;text-align: justify;">Se prohíbe la publicación en línea de datos obtenidos de Bio - Oro sin autorización explícita de la Prefectura de El Oro. Se quiere evitar&nbsp;la existencia de plagios incompletas de nuestras bases de datos.&nbsp; La información de Bio - Oro está siendo actualizada y corregida constantemente. Recomendamos a nuestros usuarios que puedan acceder a la información más reciente para contar con la información más confiable.<br></p>
+                        </div>
+                        <div class="text">
+                            <h2 style="font-size: 20px;font-family: Roboto;font-weight: bold;"><strong>Cambios en los términos y condiciones para el uso de los datos&nbsp;</strong><br></h2>
+                            <p style="font-family: Roboto;font-size: 14px;text-align: justify;">Los términos y condiciones para el uso de los datos pueden cambiar. Por favor, revíselos regularmente. Si usted usa los datos, está aceptando los términos de uso más recientes.&nbsp;<br></p>
+                        </div>
+                        <div class="text">
+                            <h2 style="font-weight: bold;font-family: roboto;font-size: 20px;"><strong>Responsabilidad</strong><br></h2>
+                            <p style="font-size: 14px;font-family: roboto;text-align: justify;">Bio - Oro busca difundir información detallada y actualizada de nuestra flora y fauna para que sus usuarios tomen conciencia de la importancia de la diversidad biológica y también de la necesidad de su conservación a largo plazo.<br></p>
+                            <p style="font-size: 14px;font-family: Roboto;text-align: justify;">Debido a la gran cantidad de información, es imposible que todos los datos sean precisos y estén libres de errores. Bio - Oro no puede garantizar que los datos sean correctos o completos. Tampoco puede garantizar acceso ininterrumpido a la base de datos.&nbsp;<br></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    </div>
+
+{% endblock %}

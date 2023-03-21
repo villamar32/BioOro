@@ -1,0 +1,26 @@
+@media (min-width: 300px) {
+  .seccion-galeria {
+    padding: 40px 12px 40px 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .seccion-galeria {
+    padding: 40px 150px 40px 150px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .seccion-galeria {
+    padding: 40px 150px 40px 150px;
+  }
+}
+
+
+
+.photo-gallery img:hover {
+ 
+  transform: scale(1.1);
+  transition: all 0.6s ease-out 0s;
+}
+

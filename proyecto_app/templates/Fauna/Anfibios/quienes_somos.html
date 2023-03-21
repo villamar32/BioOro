@@ -1,0 +1,44 @@
+{% extends "Fauna/Anfibios/dashboard.html" %}
+
+{% load static %}
+
+{% block content %}
+   
+
+
+<link rel="stylesheet" href="{% static  'css/agradecimientos/styles.css' %}">
+
+
+
+<div class="card" style="text-align: justify;">
+    <div id="carousel-example-card" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            
+          
+        </ol>
+        <div class="carousel-inner rounded-0"  role="listbox">
+            <div class="carousel-item active">
+                <img src="{% static 'assets/img/Fauna/Anfibios/s1.jpg' %}" style="height: 600px;"
+                    class="d-block w-100" alt="First slide">
+            </div>
+           
+        </div>
+    <div class="container "  style="padding-bottom: 40px;">
+        <h1 style="text-align: center;margin-top: 20px;font-family: roboto;font-weight: bold;padding-bottom: 20px;">¿Quienes Somos?</h1>
+        <h1 style="font-family: roboto;font-weight: bold;font-size: 35px;width: 200px;">Misión:</h1>
+        <p style="text-align: justify;font-family: roboto;font-size: 18px;">El Gobierno Autónomo Descentralizado Provincial de El Oro tiene la Misión, de ejercer, desde los principios de la igualdad y la equidad, la sustentabilidad y la participación protagónica de los orenses, con autonomía política, administrativa y financiera, el gobierno del territorio para el logro del Buen Vivir de sus ciudadanos y el desarrollo integral y sostenible de Ia Provincia.<br></p>
+        <h1 style="font-family: roboto;font-weight: bold;font-size: 35px;width: 200px;">Visión:</h1>
+        <p style="text-align: justify;font-family: roboto;font-size: 18px;">El GADPEO es un referente de calidad, innovación y eficacia entre las administraciones publicas provinciales de Ecuador, desarrollando sus funciones y competencia mediante sistemas de gesti6n y presupuestos para resultados y sistemas de gestión de calidad, que garantizan Ia gobernanza del territorio, la máxima participación y control social, la transparencia en la gestión pública y la implicación de la administración en el logro del Buen Vivir de la Provincia de El Oro, sus desarrollo y progreso económico, social, ambiental y cultural.<br></p>
+        <h1 style="font-family: roboto;font-weight: bold;font-size: 35px;">Valores:</h1>
+        <p style="text-align: justify;font-family: roboto;font-size: 18px;">La Provincia va a trabajar para dotarse de un modelo propio de gestión de los servicios públicos basado en los siguientes valores:<br></p>
+        <p style="text-align: justify;font-family: roboto;font-size: 18px;">• Máximo respeto a la legalidad y trato igual a las personas y territorios.<br>• Compromiso con el ser humano, el desarrollo de la Provincia y el logro del Buen Vivir.<br>• Ética, Transparencia y difusión de la gestión pública.<br>• Profesionalidad e imparcialidad de los empleados públicos.<br>• Participación protagónica de los ciudadanos en las decisiones que les afecten.<br>• Innovación, mejora continua y en la gestión y administración electrónica al servicio del<br>ciudadano.<br>• Gestión del Talento Humano y desarrollo de Ia carrera profesional de los servidores públicos.<br>• Administración de y para todos los Orenses.<br></p>
+    </div>
+    <div class="container" style="padding-bottom: 40px;">
+        <img src="{% static 'assets/img/BusquedaGeneral/comunes/entidades.png' %}" style="width:300px;">
+    </div>
+    <script src="{% static 'css/agradecimientos/bootstrap.min.js'%}"></script>
+   
+</div>
+
+
+{% endblock %}

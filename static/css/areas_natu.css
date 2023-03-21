@@ -1,0 +1,92 @@
+
+.areas_titulo{
+    text-align: center;
+}
+
+.areas_titulo h1{
+    font-weight: bold;
+}
+
+.areas_titulo h3{
+    margin: 30px 0 10px 60px;
+    text-align: initial;
+    font-weight: bold;
+}
+
+.parrafos{
+    margin: 0px 60px;
+    justify-content: center;
+}
+
+.parrafos p{
+    color: #000;
+}
+
+.parrafos ul li{
+    font-family: "Roboto";
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: normal;
+    list-style-type: disc;
+    margin-left: 10px;
+}
+
+.areas_foto{
+    width: 100%;
+    text-align: center;
+}
+.areas_foto img{
+    width: 50%;
+    margin: 5px;
+}
+
+.icon-menu:before {
+    content: "\e9bd";
+}
+
+.burger-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .7);
+    display: none;
+    line-height: 40px;
+    text-align: center;
+    position: fixed;
+    z-index: 5;
+    left: 5px;
+    top: 5px;
+    color: white;
+}
+
+.navbar{
+    background: #fff;
+}
+
+.header-area.header-sticky {
+    padding-left: 20px;
+}
+
+@media screen and (max-width: 1440px){
+    .header-area .header-wrapper .main-menu ul li a{
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .header-area .header-wrapper .main-menu ul li a{
+        font-size: 16px;
+    }
+    .header-area .header-wrapper .main-menu ul li.elimi{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .burger-button{
+        display: block;
+    }
+    .header-area .slicknav_btn{
+        top: -38px;
+    }
+}

@@ -1,0 +1,45 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <link rel="stylesheet" href="{% static 'css/Probando_css/bootstrap.css'%}">
+
+    <link rel="stylesheet" href="{% static 'css/Probando_css/perfect-scrollbar/perfect-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Probando_css/app.css' %}">
+    <link rel="shortcut icon" href="{% static  'assets/img/Probando_images/favicon.svg' %}" type="image/x-icon">
+</head>
+
+<body>
+    <nav class="navbar navbar-header navbar-expand navbar-light sticky-top " style="background-color: rgb(247, 250, 255);">
+        <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
+        <button class="btn navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav d-flex align-items-center navbar-light ms-auto">
+                
+            
+                <ul class="navbar-nav" style="height: 2.625rem;">           
+                    <li class="nav-item"><a class="nav-link" href="{% url 'infoweb'%}">Acerca de Bioro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'sugerencias'%}">Sugerencias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contacto'%}">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'busquedaavanzada'%}">Búsqueda Avanzada</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'galeriageneral'%}">Galería</a></li>  
+                    
+                </ul>
+          
+                
+            </ul>
+        </div>
+    </nav>
+</body>
+
+</html>

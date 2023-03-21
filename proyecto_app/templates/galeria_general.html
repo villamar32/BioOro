@@ -1,0 +1,399 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Galería</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
+    <link rel="stylesheet" href="{% static 'css/themify.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Galeria_css/best-carousel-slide.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Galeria_css/Carousel-Hero.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Galeria_css/galeria.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Galeria_css/Highlight-Blue.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="{% static 'css/Galeria_css/Lightbox-Gallery.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+
+    <nav class="navbar navbar-light navbar-expand-md sticky-top bg-light" >
+        <div class="container-fluid"><a class="navbar-brand" href="{% url 'inicio'%}"><img id="logo" src="{% static 'assets/img/logo/logo.png' %}">Bioro</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav" style="height: 42px;"> 
+                    <li class="nav-item" style="margin-right: 15px;"><a class="nav-link active" href="#mamiferos">Mamíferos</a></li> 
+                    <li class="nav-item" style="margin-right: 15px;"><a class="nav-link active" href="#anfibios">Anfibios</a></li> 
+                    <li class="nav-item" style="margin-right: 15px;"><a class="nav-link active" href="#reptiles">Reptiles</a></li> 
+                    <li class="nav-item" style="margin-right: 15px;"><a class="nav-link active" href="#aves">Aves</a></li> 
+                    <li class="nav-item" style="margin-right: 15px;"><a class="nav-link active" href="#peces">Peces</a></li> 
+                    <li class="nav-item" style="margin-right: 15px;"><a class="nav-link active" href="#macroinvertebrados">Macroinvertebrados</a></li>          
+                    <li class="nav-item" style="margin-right: 15px;"><a class="nav-link active" href="#bromelias">Bromelias</a></li> 
+                    <li class="nav-item" style="margin-right: 15px;"><a class="nav-link active" href="#orquideas">Orquídeas</a></li> 
+                    <li class="nav-item" style="margin-right: 15px;"><a class="nav-link" href="{% url 'sugerencias'%}">Sugerencias</a></li>
+                    <li class="nav-item" style="margin-right: 15px;"><a class="nav-link" href="{% url 'contacto'%}">Contacto</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+</head>
+
+<body>
+    
+    <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="bg-light border rounded border-light hero-nature carousel-hero jumbotron fondo p-y5 px-4">
+                    <h1 class="hero-title">G A L E R Í A</h1>
+                    <p>ALBUM DE LA SORPRENDENTE DIVERSIDAD DE ANFIBIOS, REPTILES , AVES, PECES, MACROINVERTEBRADOS Y FLORA<br>DE LA PROVINCIA DE EL ORO<br><br></p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span class="visually-hidden">Next</span></a></div>
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+        </ol>
+    </div>
+    <div class="seccion-galeria">
+        <p style="text-align: center;"><br>La Provincia de El Oro presenta características geográficas únicas que genera una variedad de pisos altitudinales, esto sumado a influencias climátologicas, han convertido a la Provincia de El Oro, en un territorio megadiverso que abarca 15 ecosistemas muy poco estudiados, por lo que esta obra abre espacios de conocimiento y valoración de nuestra diversidad biológica. Especies para la ciencia y nuevas ampliaciones de distribución para la provincia de El Oro y el Ecuador.<br><br></p>
+        
+        <section class="photo-gallery">
+            <a name="mamiferos"></a>
+            <div class="container">
+                <div class="intro">
+                    
+                    <h2 class="text-center">Mamíferos</h2>
+                </div> 
+                <div class="card">                   
+                    <section class="photo-gallery">
+            
+                        <div class="container">
+                            <div class="row photos" data-bss-baguettebox="">
+                                {%  for i in mamiferos  %}
+                                
+                                <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                    <a href="{{i.imagen.url}}">
+                                        <img class="img-fluid ratio ratio-1x1" src="{{i.imagen.url}}"></a>
+                                    <figure>
+                                        <blockquote class="blockquote">
+                                            <p class="mb-0" style="text-align: center;font-weight: bold;color: rgb(19,20,20); padding-top: 10px;">{{i.nom_especie}}</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer" style="text-align: center;color: rgb(21,23,25);">{{i.nom_familia}}</figcaption>
+                                    </figure>
+                                </div>
+                                
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                    
+                    </section>
+                </div>
+
+
+                <a name="aves"></a>
+ 
+            <div class="container">
+             
+                <div class="intro">
+                    <h2 class="text-center">Aves</h2>
+                </div>
+                
+
+                <div class="card">
+                   
+                    <section class="photo-gallery">
+                       
+                        <div class="container"> 
+                            <div class="row photos" data-bss-baguettebox="">
+                                {%  for i in aves  %}
+                                
+                                <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                    <a href="{{i.imagen.url}}">
+                                        <img class="img-fluid ratio ratio-1x1" src="{{i.imagen.url}}"></a>
+                                    <figure>
+                                        <blockquote class="blockquote">
+                                            <p class="mb-0" style="text-align: center;font-weight: bold;color: rgb(19,20,20); padding-top: 10px;">{{i.nom_especie}}</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer" style="text-align: center;color: rgb(21,23,25);">{{i.nom_familia}}</figcaption>
+                                    </figure>
+                                </div>
+                                
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+
+
+
+
+            </div>
+            <div class="container">
+                <div class="intro">
+                    <h2 class="text-center">Anfibios</h2>
+                </div>
+                
+
+                <div class="card">
+                   
+                    <section class="photo-gallery">
+                        <a name="anfibios"></a>
+                        <div class="container"> 
+                            <div class="row photos" data-bss-baguettebox="">
+                                {%  for i in anfibios  %}
+                                
+                                <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                    <a href="{{i.imagen.url}}">
+                                        <img class="img-fluid ratio ratio-1x1" src="{{i.imagen.url}}"></a>
+                                    <figure>
+                                        <blockquote class="blockquote">
+                                            <p class="mb-0" style="text-align: center;font-weight: bold;color: rgb(19,20,20); padding-top: 10px;">{{i.nom_especie}}</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer" style="text-align: center;color: rgb(21,23,25);">{{i.nom_familia}}</figcaption>
+                                    </figure>
+                                </div>
+                                
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                    
+                    </section>
+                </div>
+
+
+
+
+            </div>
+            <div class="container">
+                <div class="intro">
+                    <h2 class="text-center">Reptiles</h2>
+                </div>
+                
+
+
+                <div class="card">
+                   
+                    <section class="photo-gallery">
+                        <a name="reptiles"></a>
+                        <div class="container"> 
+                            <div class="row photos" data-bss-baguettebox="">
+                                {%  for i in reptiles  %}
+                                
+                                <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                    <a href="{{i.imagen.url}}">
+                                        <img class="img-fluid ratio ratio-1x1" src="{{i.imagen.url}}"></a>
+                                    <figure>
+                                        <blockquote class="blockquote">
+                                            <p class="mb-0" style="text-align: center;font-weight: bold;color: rgb(19,20,20); padding-top: 10px;">{{i.nom_especie}}</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer" style="text-align: center;color: rgb(21,23,25);">{{i.nom_familia}}</figcaption>
+                                    </figure>
+                                </div>
+                                
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                    
+                    </section>
+                </div>
+
+
+
+                
+                
+
+
+
+
+
+            </div>
+
+
+                 
+            <div class="container">
+                <div class="intro">
+                    <h2 name="tema1" class="text-center">Peces</h2>
+                </div>
+                
+
+                <div class="card">
+                   
+                    <section class="photo-gallery">
+                        
+                         <a name="peces"></a>
+                        <div class="container"> 
+                            <div class="row photos" data-bss-baguettebox="">
+                                {%  for i in peces  %}
+                                
+                                <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                    <a href="{{i.imagen.url}}">
+                                        <img class="img-fluid ratio ratio-1x1" src="{{i.imagen.url}}"></a>
+                                    <figure>
+                                        <blockquote class="blockquote">
+                                            <p class="mb-0" style="text-align: center;font-weight: bold;color: rgb(19,20,20); padding-top: 10px;">{{i.nom_especie}}</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer" style="text-align: center;color: rgb(21,23,25);">{{i.nom_familia}}</figcaption>
+                                    </figure>
+                                </div>
+                                
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                    
+                    </section>
+                </div>
+
+
+
+            </div>
+            
+            <div class="container">
+                <div class="intro">
+                    <h2 class="text-center">Flora</h2>
+                </div>
+
+
+                <div class="intro">
+                    <h2 class="text-center">Bromelias</h2>
+                </div> 
+
+                <div class="card">
+                   
+                    <section class="photo-gallery">
+                        
+                        <a name="bromelias"></a>
+                        <div class="container"> 
+                            <div class="row photos" data-bss-baguettebox="">
+                                {%  for i in bromelias  %}
+                                
+                                <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                    <a href="{{i.imagenflora.url}}">
+                                        <img class="img-fluid ratio ratio-1x1" src="{{i.imagenflora.url}}"></a>
+                                    <figure>
+                                        <blockquote class="blockquote">
+                                            <p class="mb-0" style="text-align: center;font-weight: bold;color: rgb(19,20,20); padding-top: 10px;">{{i.nom_flora}}</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer" style="text-align: center;color: rgb(21,23,25);">{{i.nom_genero}}</figcaption>
+                                    </figure>
+                                </div>
+                                
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                    
+                    </section>
+                </div>
+
+
+
+                <div class="intro">
+                    <h2 class="text-center">Orquideas</h2>
+                </div> 
+
+                <div class="card">
+                   
+                    <section class="photo-gallery">
+                        
+                        <a name="orquideas"></a>
+                        <div class="container"> 
+                            <div class="row photos" data-bss-baguettebox="">
+                                {%  for i in orquideas  %}
+                                
+                                <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                    <a href="{{i.imagenflora.url}}">
+                                        <img class="img-fluid ratio ratio-1x1" src="{{i.imagenflora.url}}"></a>
+                                    <figure>
+                                        <blockquote class="blockquote">
+                                            <p class="mb-0" style="text-align: center;font-weight: bold;color: rgb(19,20,20); padding-top: 10px;">{{i.nom_flora}}</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer" style="text-align: center;color: rgb(21,23,25);">{{i.nom_genero}}</figcaption>
+                                    </figure>
+                                </div>
+                                
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                    
+                    </section>
+                </div>
+                
+            </div>
+
+
+            <div class="container">
+                <div class="intro">
+                    <h2 class="text-center">Macroinvertebrados Acuáticos</h2>
+                </div>
+
+                <div class="card">
+                   
+                    <section class="photo-gallery">
+                        
+                          <a name="macroinvertebrados"></a>
+                        <div class="container"> 
+                            <div class="row photos" data-bss-baguettebox="">
+                                {%  for i in macroinvertebrados  %}
+                                
+                                <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                    <a href="{{i.imagen_abundancia.url}}">
+                                        <img class="img-fluid ratio ratio-1x1" src="{{i.imagen_abundancia.url}}"></a>
+                                    <figure>
+                                        <blockquote class="blockquote">
+                                            <p class="mb-0" style="text-align: center;font-weight: bold;color: rgb(19,20,20); padding-top: 10px;">{{i.tax_abundancia}}</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer" style="text-align: center;color: rgb(21,23,25);">{{i.nom_familia}}</figcaption>
+                                    </figure>
+                                </div>
+                                
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                    
+                    </section>
+                </div>
+
+
+
+                {% include "secciones/redes_sociales.html" %}
+                
+            </div>
+        </section>
+    </div>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bs-init.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/father-icons/feather.js' %}"></script>
+    <script src="{% static 'js/father-icons/feather.min.js' %}"></script>
+    <script src="{% static 'js/feather-icons.js' %}"></script>
+    <script src="{% static 'js/Lightbox-Gallery.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/pages/dashboard.js' %}"></script>
+    <script src="{% static 'js/pages/form-editor.js' %}"></script>
+    <script src="{% static 'js/pages/ui-apexchart.js' %}"></script>
+    <script src="{% static 'js/pages/ui-chartjs.js' %}"></script>
+    <script src="{% static 'js/pages/widgets.js' %}"></script>
+    <script src="{% static 'js/simple-datatables/simple-datatables.js' %}"></script>
+    <script src="{% static 'js/vendors.js' %}"></script>
+</body>
+{% include "secciones/footer.html" %}
+</html>

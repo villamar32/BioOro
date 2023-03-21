@@ -1,0 +1,21 @@
+@media (min-width: 300px) {
+  #logo {
+    max-height: 42px;
+    margin-right: 18px;
+    margin-top: -3px;
+    margin-left: 5px;
+    display: inline-block;
+  }
+}
+
+@media (min-width: 1200px) {
+  #logo {
+    max-height: 42px;
+    margin-right: 18px;
+    margin-top: -3px;
+    margin-left: 65px;
+    display: inline-block;
+  }
+}
+
+

@@ -1,0 +1,109 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/Probando_css/menu.css' %}">
+
+<div id="app">
+    <div id="sidebar" class='active'>
+        <div class="sidebar-wrapper active">
+            <div class="sidebar-header" style="padding-top: 90px;">
+                <a href="{% url 'inicio'%}" >
+                    <img alt="Qries" src="{% static 'assets/img/logo/logo.png' %}" style="display: block; margin: auto; width: 78px; height: 58px; " >
+                 </a>
+            </div>
+
+           
+            <div class="sidebar-menu">
+                <ul class="menu">
+
+
+                    <li class='sidebar-title'>Información</li>
+
+
+
+                    <li class="sidebar-item">
+                        <a href="{% url 'busqueda_anfibios' %}" class='sidebar-link'>
+                            <i data-feather="layers" width="20"></i>
+                            <span>Busqueda avanzada</span>
+                        </a>
+
+                    </li>
+
+                    <li class="sidebar-item  ">
+                        <a href="{% url 'intro_anfibios' %}" class='sidebar-link'>
+                            <i data-feather="file-text" width="20"></i>
+                            <span>Introducción</span>
+                        </a>
+
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="{% url 'galeria_anfibios' %}" class='sidebar-link'>
+                            <i data-feather="grid" width="20"></i>
+                            <span>Galería</span>
+                        </a>
+
+                    </li>
+
+
+
+                    <li class='sidebar-title'>Nuevas &amp; Especies</li>
+
+                    <li class="sidebar-item ">
+                        <a href="{% url 'noticias_anfibios' %}" class='sidebar-link'>
+                            <i data-feather="alert-circle" width="20"></i>
+                            <span>Noticias</span>
+                        </a>
+
+                    </li>
+
+                    <li class='sidebar-title'>FICHA TÉCNICA</li>
+
+
+                    <li class="sidebar-item ">
+                        <a href="{% url 'lista_especies_anfibios' %}" class='sidebar-link'>
+                            <i data-feather="file-plus" width="20"></i>
+                            <span>Lista de especies</span>
+                        </a>
+ 
+                    </li>
+
+                    <li class='sidebar-title'>EXTRA</li>
+
+
+                    <li class="sidebar-item ">
+                        <a href="{% url 'como_citar_anfibios' %}" class='sidebar-link'>
+                           
+                            <span>¿Cómo citar?</span>
+                        </a>
+ 
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="{% url 'uso_datos_anfibios' %}" class='sidebar-link'>
+                           
+                            <span>Uso de datos</span>
+                        </a>
+ 
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="{% url 'agradecimientos_anfibios' %}" class='sidebar-link'>
+                           
+                            <span>Agradecimientos</span>
+                        </a>
+ 
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="{% url 'quienes_somos_anfibios' %}" class='sidebar-link'>
+                           
+                            <span>¿Quiénes somos?</span>
+                        </a>
+ 
+                    </li>
+
+            </div>
+            <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+        </div>
+    </div>
+    {% include "secciones/redes_sociales.html" %}

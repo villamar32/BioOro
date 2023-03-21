@@ -1,0 +1,205 @@
+{% extends "Flora/Bromelia/dashboard.html" %}
+
+{% load static %}
+
+
+
+
+{% block content %}
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
+<link rel="stylesheet" href="{% static 'css/themify.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Ficha_tecnica/Article-List.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Ficha_tecnica/ficha_tecnica.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Ficha_tecnica/Carousel-Hero.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Ficha_tecnica/Data-Table-1.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Ficha_tecnica/Data-Table.css' %}">
+
+          
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Galeria/best-carousel-slide.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Galeria/Carousel-Hero.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Galeria/galeria.css' %}">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Galeria/Highlight-Blue.css' %}">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+<link rel="stylesheet" href="{% static 'css/Flora/Bromelias/Galeria/Lightbox-Gallery.css' %}">
+
+
+<div style="background-color: black;">
+    <div id="carousel-example-card" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carousel-example-card" data-slide-to="0"
+                class="active"></li>
+          
+        </ol>
+        {%  for i in imagen  %}
+        <div class="carousel-inner rounded-0"  role="listbox">
+            <div class="carousel-item active">
+                <img src="{{i.imagenflora.url}}"
+                    class="d-block w-50  " style=" display: block; margin: auto; " alt="First slide">
+            </div>
+           
+        </div>
+        {% endfor %}
+      </div>
+</div>
+<div>
+
+    <div class="article-list">
+        <div class="container">
+            <div class="intro">
+                
+                {%  for i in imagen  %}
+                
+                <h2 class="text-center">{{ i.id_flora.nom_flora}}</h2>
+                <p class="text-center" style="font-weight: bold;text-align: center;color: var(--bs-gray-800);">{{ result.nom_cientifico }}</p>
+                <p class="text-center" style="color: var(--bs-gray-800);">Autor: Autor: {{ i.id_flora.autor_flora }}</p>
+                <p class="text-center" style="color: var(--bs-gray-800);">Año: {{ result.anio_descubrimiento }}</p>
+               
+                {% endfor %}
+               
+            </div>
+
+           
+        </div>
+    </div>
+
+
+   <section class="section">
+    <div class="card">
+    
+        <section id="seccion-tabla">
+           
+            <h3 data-aos="fade" style="padding-top: 20px;">Ficha Técnica</h3>
+            <p data-aos="fade" style="font-weight: bold;">Taxonomía</p>
+           
+
+            
+
+            <div class="container">
+                <div class="row"><div class="col-md-6">
+            
+        </div>
+    </div>
+   
+</div>
+
+<div class="container">
+                <div class="row">
+                    
+        <div class="col-md-6 p-3 ps-0">
+           
+        </div></div>
+            </div>
+            <div id="desplegar">
+              
+                
+
+                  <div class="table-responsive col-lg-12">
+                    <table id="example" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Etimología</th>
+                                <th>Diagnosís</th>
+                                <th>Comentarios</th>
+                                <th>Distribución</th>
+                            </tr>
+                        </thead>
+                        <tbody id="myTable" style="max-height:6.25rem; overflow:auto; ">
+                            
+                            <tr> 
+                                {%  for i in imagen  %}
+                                <td>{{ i.id_flora.etimologia_flora}}</td>
+                                <td>{{ i.id_flora.diagnosis_flora }}</td>
+                                <td>{{ i.id_flora.comentarios_taxonomicos_flora }}</td>
+                                <td>{{ i.id_flora.distribucion_composicion_flora }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+
+
+
+                    
+                <script type="text/javascript">
+            
+                $(document).ready(function(){
+                  $("#myInput").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#myTable tr").filter(function() {
+                      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                  });
+                });
+            
+                /* Para funcinalidades de presentar tabla*/
+                function mostrar_todo(){
+                    document.getElementById('desplegar').style.display = 'block';
+                }
+
+                function quitar_todo(){
+                    document.getElementById('desplegar').style.display = 'none';
+                }
+            
+                </script>
+                </div>
+
+            </div>
+        
+
+
+        </section>
+        <section class="photo-gallery">
+
+            <div class="container">
+                <div class="intro">
+                    <h2 class="text-center">Galería</h2>
+                </div>
+                <div class="row photos" data-bss-baguettebox="">
+                    {%  for i in imagenes  %}
+                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{i.imagenflora.url}}"><img class="img-fluid ratio ratio-1x1" src="{{i.imagenflora.url}}"></a>
+                        <figure>
+                            <blockquote class="blockquote">
+                                <p class="mb-0" style="text-align: center;font-weight: bold;color: rgb(19,20,20); padding-top: 10px;">{{ i.nom_flora }}</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer" style="text-align: center;color: rgb(21,23,25);"></figcaption>
+                        </figure>
+                    </div>
+            
+                    {% endfor %}
+                    
+                
+                </div>
+            </div>
+            
+        
+        </section>
+       </div>
+   </section>
+ 
+
+
+
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+
+
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/bs-init.js' %}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+
+
+<script src="{% static 'js/Lightbox-Gallery.js' %}"></script>
+
+<script src="{% static 'js/simple-datatables/simple-datatables.js' %}"></script>
+<script src="{% static 'js/vendors.js' %}"></script>
+
+{% endblock %}    
